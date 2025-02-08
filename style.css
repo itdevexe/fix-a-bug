@@ -67,6 +67,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
 }
 
 .nav1{
@@ -342,6 +343,250 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- */
+
+
+
+.section12{
+  width: 100%;
+  background-color: #f9f7ff;
+  /* padding: opx !important; */
+  display: none;
+}
+
+.container {
+  width: 100%;
+  /* min-height: 100svh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordions {
+  width: 90%;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+.accordion {
+    border: 1px solid #f9f7ff;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: border-color .5s ease;
+  background-color: #f9f7ff;
+
+}
+
+.accordion:hover {
+  /* border-color: #000; */
+}
+
+.accordion__header {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  
+  color: #666;
+
+}
+.accordion__header:after, .accordion__header:before {
+  content: '';
+  position: absolute;
+  right: 1.5em;
+  width: 2px;
+  height: 0.75em;
+  background-color: #f9f7ff;
+  transition: all 0.2s;
+}
+.accordion__header:after {
+  transform: rotate(90deg);
+}
+
+.accordion:has(input:checked) .accordion__header {
+  /* color: #000; */
+}
+
+.accordion__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  * {
+        padding: 0 1em 1em;
+  }
+}
+
+.accordion input {
+  display: none;
+}
+
+.accordion:has(input:checked) {
+  /* border-color: #000; */
+  background-color: #f9f7ff;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.accordion input:checked ~ .accordion__header:before {
+    transform: rotate(270deg) !important;
+  background-color: #000;
+ }
+
+.accordion input:checked ~ .accordion__header:after {
+    transform: rotate(270deg) !important;
+  background-color: #000;
+ }
+
+.accordion input:checked ~ .accordion__content {
+    max-height: 1000px; /* Adjust based on content length */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+  .section{
+    width: 100%;
+  }
+
+  .section1{
+    max-width: 279px;
+  }
+
+  .section2{
+    max-width: auto;
+    display: none;
+  }
+  .flexrow2{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .container1{
+    max-width: 280px;
+    padding: 0px 16px;
+  }
+
+  .container2{
+    width: 100%;
+  }
+  
+  .section12{
+    width: 100%;
+    background-color: #f9f7ff;
+    /* padding: opx !important; */
+    /* display: none; */
+  }
+  .container3{
+    width: 100%;
+  }
+
+  .container4{
+    width: 100%;
+  }
+  .wide674px{
+    width: auto;
+  }
+
+  .fnt-size{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .size52px{
+    font-size: 38px;
+    text-align: center;
+    
+  }
+  
+  .flex-row1{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 6px;
+    justify-content: center;
+  }
+
+
+  .mobile-img50px{
+    width: 50px;
+  }
+
+  .bold600{
+    text-align: center;
+  }
+  .fnt-size2{
+    text-align: center;
+  }
+
+  .box{
+    display: grid !important;
+
+  }
+
+  .color-grey{
+    text-align: center;
+  }
+  .form-01{
+    width: auto;
+  }
+
+  .form-heading{
+    font-size: 22px;
+  }
+
+  .form-heading-div{
+    width: auto !important;
+  }
+
+  .form-input{
+    width: auto !important ;
+  }
+  .nav1{
+    display: none;
+  }
+  .flex-row{
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-container{
+    gap: 5px !important;
+  }
+  .wide444px{
+    width: auto;
+  }
+
+}
 
 
 
