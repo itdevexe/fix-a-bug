@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
         function (entries) {
             if (entries[0].isIntersecting) {
                 startCounter();
-                observer.disconnect(); 
+                observer.disconnect();
             }
         },
-        { threshold: 0.5 } 
+        { threshold: 0.5 }
     );
 
     observer.observe(counterElement);
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (count >= target) {
                 clearInterval(interval);
             }
-        }, 20); 
+        }, 20);
     }
 });
 
@@ -90,10 +90,10 @@ document.addEventListener("DOMContentLoaded", function () {
         function (entries) {
             if (entries[0].isIntersecting) {
                 startCounter();
-                observer.disconnect(); 
+                observer.disconnect();
             }
         },
-        { threshold: 0.5 } 
+        { threshold: 0.5 }
     );
 
     observer.observe(counterElement);
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (count >= target) {
                 clearInterval(interval);
             }
-        }, 100); 
+        }, 100);
     }
 });
 
@@ -118,21 +118,241 @@ const tabs = document.querySelector(".tabs");
 const btns = document.querySelectorAll(".button");
 const articles = document.querySelectorAll(".content");
 tabs.addEventListener("click", function (e) {
-  const id = e.target.dataset.id;
-  if (id) {
+    const id = e.target.dataset.id;
+    const idnum=id.split("p")[1]
+    if (id) {
 
-    btns.forEach(function (btn) {
-      btn.classList.remove("live");
-    });
-    e.target.classList.add("live");
+        btns.forEach(function (btn) {
+            btn.classList.remove("live");
+        });
+        btns[idnum-1].classList.add("live");
 
-    articles.forEach(function (article) {
-      article.classList.remove("live");
+        articles.forEach(function (article) {
+            article.classList.remove("live");
+        });
+        const element = document.getElementById(id);
+        element.classList.add("live");
+    }
+});
+
+
+function openTab(tabId) {
+    // Remove active class from all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+    // Remove active class from all buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    // Add active class to the clicked tab content
+    document.getElementById(tabId).classList.add('active');
+    // Add active class to the clicked button
+    event.currentTarget.classList.add('active');
+}
+
+
+let index = 0;
+const slides = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+function moveSlide(direction) {
+    index += direction;
+    if (index <= 0) {
+        index = 0;
+        prevButton.style.display = 'none';
+    } else {
+        prevButton.style.display = 'block';
+    }
+    if (index >= slides.length - 1) {
+        index = slides.length - 1;
+        nextButton.style.display = 'none';
+    } else {
+        nextButton.style.display = 'block';
+    }
+    slider.style.transform = `translateX(-${index * 100}%)`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let currentIndex = 0;
+// const totalSlides = 6;
+// const visibleSlides = 3;
+// const gallery = document.querySelector('.gallery');
+// const prevSlide = document.getElementById('prev-slide');
+// const nextSlide = document.getElementById('next-slide');
+
+// function moveGallery(direction) {
+//     const maxIndex = totalSlides - visibleSlides;
+//     currentIndex += direction;
+//     if (currentIndex <= 0) {
+//         currentIndex = 0;
+//         prevSlide.style.display = 'block';
+//     } else {
+//         prevSlide.style.display = 'block';
+//     }
+//     if (currentIndex >= maxIndex) {
+//         currentIndex = maxIndex;
+//         nextSlide.style.display = 'block';
+//     } else {
+//         nextSlide.style.display = 'block';
+//     }
+//     gallery.style.transform = `translateX(-${(currentIndex * 100) / visibleSlides}%)`;
+// }
+
+
+
+
+
+
+
+let currentIndex = 0;
+const totalSlides = 12;
+const visibleSlides = 3;
+const gallery = document.querySelector('.gallery');
+
+function moveGallery(direction) {
+    const maxIndex = totalSlides - visibleSlides;
+    currentIndex += direction;
+    if (currentIndex < 0) {
+        currentIndex = 0;
+    } else if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+    }
+    gallery.style.transform = `translateX(-${(currentIndex * 100) / visibleSlides}%)`;
+}
+
+
+// section8
+let tabss = document.querySelectorAll(".tab-sec8");
+let containers = document.querySelectorAll(".logo-container");
+let currentIndexx = 0;
+
+function showTab(index) {
+    tabss.forEach((tab, i) => {
+        tab.classList.toggle("active", i === index);
+        containers[i].classList.toggle("active", i === index);
     });
-    const element = document.getElementById(id);
-    element.classList.add("live");
-  }
+    currentIndexx = index;
+}
+
+tabss.forEach((tab, index) => {
+    tab.addEventListener("click", () => showTab(index));
+});
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndexx = (currentIndexx === 0) ? tabss.length - 1 : currentIndexx - 1;
+    showTab(currentIndexx);
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndexx = (currentIndexx === tabss.length - 1) ? 0 : currentIndexx + 1;
+    showTab(currentIndexx);
 });
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+// section9
+(() => {
+    const sliderWrapper = document.querySelector(".slider-container23");
+    const mask = sliderWrapper.querySelector(".testimonial-slider");
+    const slides = sliderWrapper.querySelectorAll(".testimonial");
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+    const autoSlideDuration = 5000;
+    let startX = 0;
+    let endX = 0;
+    let gap = 20;
+    
+
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[totalSlides - 1].cloneNode(true);
+    mask.appendChild(firstClone);
+    mask.insertBefore(lastClone, slides[0]);
+    // Set initial position
+    mask.style.transform = `translateX(-494px)`;
+
+    // Create navigation dots
+    const dotContainer = document.querySelector(".slider-dot-container");
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("div");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => goToSlide(i));
+        dotContainer.appendChild(dot);
+    }
+
+    const updateDots = () => {
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentSlide);
+        });
+        
+    };
+
+    const goToSlide = (slide) => {
+        currentSlide = slide;
+        mask.style.transition = "transform 0.5s ease-in-out";
+        mask.style.transform = `translateX(-${(474 * (currentSlide+1)) + (gap * (currentSlide+1))}px)`;
+        updateDots();
+    };
+
+    const autoSlide = () => {
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            goToSlide(currentSlide);
+        }, autoSlideDuration);
+    };
+
+    const slideToLeft = () => {
+        currentSlide = (currentSlide > 1) ? currentSlide - 1 : totalSlides - 1;
+        goToSlide(currentSlide);
+    };
+
+    const slideToRight = () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+    };
+
+    // Add event listeners for drag/swipe gestures
+    mask.addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
+    mask.addEventListener("touchend", (e) => {
+        endX = e.changedTouches[0].clientX;
+        if (startX > endX + 50) {
+            slideToRight();
+        } else if (startX < endX - 50) {
+            slideToLeft();
+        }
+    });
+
+    mask.addEventListener("mousedown", (e) => startX = e.clientX);
+    mask.addEventListener("mouseup", (e) => {
+        endX = e.clientX;
+        if (startX > endX + 50) {
+            slideToRight();
+        } else if (startX < endX - 50) {
+            slideToLeft();
+        }
+    });
+
+    autoSlide();
+})();
