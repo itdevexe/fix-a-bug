@@ -356,3 +356,44 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
     autoSlide();
 })();
+
+
+
+
+
+
+
+
+const slider765 = document.getElementById("slider2323");
+let isDown = false;
+let startX;
+let scrollLeft;
+
+let maxSlide = slider765.clientWidth-400;
+slider765.style.transform = `translateX(14px)`;
+
+slider765.addEventListener("touchstart", (e) => {
+    isDown = true;
+    startX = e.touches[0].pageX - slider765.offsetLeft;
+    scrollLeft = slider765.offsetLeft;
+});
+
+slider765.addEventListener("touchmove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX - slider765.offsetLeft;
+    const walk = (x - startX) * 1;
+    let transformValue = scrollLeft + walk
+    if(transformValue >=14){
+        transformValue =14;
+    }
+    if(transformValue<= -1*maxSlide){
+        transformValue = -1*maxSlide
+    }
+    slider765.style.transform = `translateX(${transformValue}px)`;
+    console.log(transformValue)
+});
+
+slider765.addEventListener("touchend", () => {
+    isDown = false;
+});
