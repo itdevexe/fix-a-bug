@@ -274,17 +274,18 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
 // section9
 
-/*
+
 (() => {
-    const sliderWrapper = document.querySelector("");
-    const mask = sliderWrapper.querySelector("");
-    const slides = sliderWrapper.querySelectorAll("");
+    const sliderWrapper = document.querySelector(".slider-container23");
+    const mask = sliderWrapper.querySelector(".testimonial-slider");
+    const slides = sliderWrapper.querySelectorAll(".testimonial");
     const totalSlides = slides.length;
     let currentSlide = 0;
     const autoSlideDuration = 5000;
     let startX = 0;
     let endX = 0;
-    let gap = 20;
+    let gap = 36;
+    const slideWidth = slides[0].clientWidth
     
 
     const firstClone = slides[0].cloneNode(true);
@@ -292,7 +293,7 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     mask.appendChild(firstClone);
     mask.insertBefore(lastClone, slides[0]);
     // Set initial position
-    mask.style.transform = `translateX(-494px)`;
+    mask.style.transform = `translateX(-${slideWidth + gap}px)`;
 
     // Create navigation dots
     const dotContainer = document.querySelector(".slider-dot-container");
@@ -304,18 +305,18 @@ document.getElementById("nextBtn").addEventListener("click", () => {
         dotContainer.appendChild(dot);
     }
 
-    const updateDots = () => {
-        document.querySelectorAll(".dot").forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentSlide);
-        });
+    const updateDots = (slide) => {
+        const dots = Array.from(sliderWrapper.querySelectorAll(".dot"))
+        dots.forEach(dot=>dot.classList.remove("active"));
+        dots[slide].classList.add("active")
         
     };
 
     const goToSlide = (slide) => {
         currentSlide = slide;
         mask.style.transition = "transform 0.5s ease-in-out";
-        mask.style.transform = `translateX(-${(474 * (currentSlide+1)) + (gap * (currentSlide+1))}px)`;
-        updateDots();
+        mask.style.transform = `translateX(-${(slideWidth * (currentSlide+1)) + (gap * (currentSlide+1))}px)`;
+        updateDots(slide);
     };
 
     const autoSlide = () => {
@@ -360,7 +361,7 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 })();
 
 
-*/
+
 
 
 
@@ -431,12 +432,11 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 })
 
-const sliderPlay=()=>{
-    const Customslider = document.querySelector('#zoom_slider')
+const sliderPlay=(Customslider,zoom)=>{
     const customMask = Customslider.querySelector('.mask')
     const navigationDOts = Customslider.querySelector('.navigation_btns');
     const slides = Array.from(Customslider.querySelectorAll('.zoom_slide'));
-    console.log(slides)
+    // console.log(zoom)
 
     const firstSlide = slides[0].cloneNode(true);
     firstSlide.classList.remove("active")
@@ -452,11 +452,16 @@ const sliderPlay=()=>{
         dots.forEach(dot=>dot.classList.remove("active"))
         dots[index].classList.add("active")
         const leftSpace = (updatedSlides[index].clientWidth * 18)/100;
-        console.log(leftSpace);
+        // console.log(leftSpace);
         
         updatedSlides.forEach(slide=>{
             slide.classList.remove("active")
-            slide.style.transform=`translateX(calc( ${-100*(index)}% - ${16*(index)}px + ${leftSpace}px )) scaleY(0.9)`;
+            if(zoom){
+                slide.style.transform=`translateX(calc( ${-100*(index)}% - ${16*(index)}px + ${leftSpace}px )) scaleY(0.9)`;
+            }
+            else{
+                slide.style.transform=`translateX(calc( ${-100*(index)}% - ${16*(index)}px + ${leftSpace}px )) scaleY(1)`;
+            }
         })
         updatedSlides[index].classList.add("active")
         updatedSlides[index].style.transform=`translateX(calc( ${-100*(index)}% - ${16*(index)}px + ${leftSpace}px )) scaleY(1)`
@@ -465,7 +470,7 @@ const sliderPlay=()=>{
 
     slides.forEach((slide,index)=>{
         const dot = document.createElement("div");
-        console.log("hello")
+        // console.log("hello")
         dot.classList.add("dot");
         if (slide.classList.contains("active") === true) dot.classList.add("active");
         dot.addEventListener("click", () => goToCusSlide(index));
@@ -475,5 +480,6 @@ const sliderPlay=()=>{
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
-    sliderPlay()
+    sliderPlay(document.querySelector('#zoom_slider'),zoom=true)
+    sliderPlay(document.querySelector('#simpleSlider'),zoom=false)
 })
