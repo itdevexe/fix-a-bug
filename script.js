@@ -273,6 +273,8 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
 
 // section9
+
+/*
 (() => {
     const sliderWrapper = document.querySelector("");
     const mask = sliderWrapper.querySelector("");
@@ -358,12 +360,14 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 })();
 
 
+*/
 
 
 
 
 
 
+/*
 const slider765 = document.getElementById("slider2323");
 let isDown = false;
 let startX;
@@ -397,3 +401,79 @@ slider765.addEventListener("touchmove", (e) => {
 slider765.addEventListener("touchend", () => {
     isDown = false;
 });
+*/
+
+
+//Section 12
+
+const testing_accordion= document.getElementById("testing-accordion")
+const show_accordion_btn = document.getElementById("show-more-accordion");
+testing_accordion.style.height="0px";
+show_accordion_btn.addEventListener("click",()=>{
+    testing_accordion.style.height="auto"
+    show_accordion_btn.style.display="none"
+})
+
+document.addEventListener("DOMContentLoaded", function () {
+    const custom_tab = document.getElementById("custom-slider")
+    const custom_tab_btn = custom_tab.querySelectorAll(".cus-tab-btn")
+    const custom_tab_tabs = custom_tab.querySelectorAll(".cus-tab-wrapper")
+
+    custom_tab_btn.forEach((btn,index)=>{
+        btn.addEventListener("click",()=>{
+            console.log("clicked");
+            
+            custom_tab_btn.forEach(el=>el.classList.remove("active"))
+            btn.classList.add("active")
+            custom_tab_tabs.forEach(el=>el.classList.remove("active"))
+            custom_tab_tabs[index].classList.add("active")
+        })
+    })
+})
+
+const sliderPlay=()=>{
+    const Customslider = document.querySelector('#zoom_slider')
+    const customMask = Customslider.querySelector('.mask')
+    const navigationDOts = Customslider.querySelector('.navigation_btns');
+    const slides = Array.from(Customslider.querySelectorAll('.zoom_slide'));
+    console.log(slides)
+
+    const firstSlide = slides[0].cloneNode(true);
+    firstSlide.classList.remove("active")
+    // const LastSlide = slides[slides.length-1].cloneNode(true)
+    customMask.appendChild(firstSlide);
+    // customMask.insertBefore(LastSlide, slides[0]);
+
+    const updatedSlides= Array.from(Customslider.querySelectorAll('.zoom_slide'))
+
+
+    const goToCusSlide =(index)=>{
+        const dots = Array.from(navigationDOts.querySelectorAll(".dot"))
+        dots.forEach(dot=>dot.classList.remove("active"))
+        dots[index].classList.add("active")
+        const leftSpace = (updatedSlides[index].clientWidth * 18)/100;
+        console.log(leftSpace);
+        
+        updatedSlides.forEach(slide=>{
+            slide.classList.remove("active")
+            slide.style.transform=`translateX(calc( ${-100*(index)}% - ${16*(index)}px + ${leftSpace}px )) scaleY(0.9)`;
+        })
+        updatedSlides[index].classList.add("active")
+        updatedSlides[index].style.transform=`translateX(calc( ${-100*(index)}% - ${16*(index)}px + ${leftSpace}px )) scaleY(1)`
+    }
+
+
+    slides.forEach((slide,index)=>{
+        const dot = document.createElement("div");
+        console.log("hello")
+        dot.classList.add("dot");
+        if (slide.classList.contains("active") === true) dot.classList.add("active");
+        dot.addEventListener("click", () => goToCusSlide(index));
+        navigationDOts.appendChild(dot);
+    })
+    goToCusSlide(0)
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+    sliderPlay()
+})
