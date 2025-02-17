@@ -6,6 +6,22 @@ body {
   margin: 0px;
 }
 
+.page-wrapper {
+
+  overflow: hidden;
+}
+
+.nav-section {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0px;
+  z-index: 500;
+  background-color: #fff ;
+  padding: 10px 0px;
+
+}
+
 .section {
   display: flex;
   justify-content: center;
@@ -1708,9 +1724,25 @@ img {
 @media only screen and (max-width: 767px) {
 
 
+  .nav{
+    justify-content: center;
+  }
+
+  .nav-section{
+    width: 100%;
+  }
+
+  .mainSliderWrapper::after{
+    background: #ffffff00;
+  }
+
+  .mainSliderWrapper{
+    
+  }
   
   .section {
-    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .section1 {
@@ -2325,24 +2357,6 @@ body {
   align-items: center;
   margin-top: 30px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

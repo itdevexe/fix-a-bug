@@ -274,9 +274,9 @@ document.getElementById("nextBtn").addEventListener("click", () => {
 
 // section9
 (() => {
-    const sliderWrapper = document.querySelector(".slider-container23");
-    const mask = sliderWrapper.querySelector(".testimonial-slider");
-    const slides = sliderWrapper.querySelectorAll(".testimonial");
+    const sliderWrapper = document.querySelector("");
+    const mask = sliderWrapper.querySelector("");
+    const slides = sliderWrapper.querySelectorAll("");
     const totalSlides = slides.length;
     let currentSlide = 0;
     const autoSlideDuration = 5000;
