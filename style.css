@@ -57,8 +57,15 @@ body {
   justify-content: center;
   /* margin-top: 100px; */
   /* background-color: #f9f7ff; */
-  background-color: #f9f7ff;
+  background-color: #f2eeff;
 
+}
+
+.a-div{
+  padding: 0px !important;
+  text-decoration: none;
+  transition: .5s all ease-in-out;
+  position: relative;
 }
 
 .section7 {
@@ -120,7 +127,7 @@ body {
 
 .container4 {
   width: 1140px;
-  padding: 40px 0px 40px 0px;
+  padding: 120px 0px 20px 0px;
 
 }
 
@@ -211,6 +218,7 @@ body {
 .bold600 {
   font-size: 17px;
   font-weight: 600;
+  padding-bottom: 10px;
 }
 
 .flex-row {
@@ -429,7 +437,7 @@ body {
   margin: 0 auto;
   max-width: 1170px;
   min-width: 340px;
-  padding: 5rem 0;
+  padding: 3.2rem 0;
   gap: 0px;
 }
 
@@ -489,6 +497,7 @@ body {
   font-size: 28px;
   font-weight: 700;
   line-height: 30px;
+  padding-bottom: 10px;
 }
 
 /* hide content */
@@ -566,7 +575,6 @@ body {
 .gallery-container {
   position: relative;
   width: 600px;
-  overflow: hidden;
   margin: auto;
   width: 1140px;
   /* height: 620px; */
@@ -578,7 +586,10 @@ body {
   transition: transform 0.5s ease-in-out;
   /* height: 450px; */
   gap: 35px;
+  /* gap: 20px; */
   min-height: 550px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .gallery-item {
@@ -587,6 +598,9 @@ body {
   box-sizing: border-box;
   /* padding: 5px; */
   background-color: white;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .gallery-item img {
@@ -626,6 +640,8 @@ body {
   width: 104px;
   background-color: #785dbf;
   border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 
 }
 
@@ -633,6 +649,8 @@ body {
   width: 140px;
   background-color: #785dbf;
   border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 .read-story{
   color: #785dfb;
@@ -679,7 +697,7 @@ body {
 
 .controls .ctrl-btn:hover {
   background-color: #6c4ff7;
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .controls .ctrl-btn svg {
@@ -707,15 +725,18 @@ body {
 
 #prev-slide {
   position: absolute;
-  left: 0px;
+  left: 0%;
+  transform: translateX(-50%);
   /* display: none; */
   height: 50px;
   width: 50px;
+  
 }
 
 #next-slide {
   position: absolute;
-  right: 0px;
+  right: 0;
+  transform: translateX(50%);
   height: 50px;
   width: 50px;
 }
@@ -796,6 +817,7 @@ body {
 .para-div-inside{
   padding-left: 20px;
   border-left: 3px solid #785dfb;
+  
 }
 
 .img732321{
@@ -1413,7 +1435,7 @@ text-align: left;
 
 .slide {
   min-width: 100%;
-  height: 480px;
+  height: 379px;
   padding-bottom: 20px;
 }
 
@@ -1685,7 +1707,7 @@ img {
   /* Slightly enhanced shadow */
   color: #fff;
   /* Change text color */
-  transform: scale(1.1);
+  transform: translateX(-50%) scale(1.1);
 }
 
 
@@ -1697,13 +1719,52 @@ img {
   /* Slightly enhanced shadow */
   color: #fff;
   /* Change text color */
-  transform: scale(1.1);
+  transform: translateX(50%) scale(1.1);
 }
 
 
+.lightbox-popup{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #171717e2;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
 
+}
+.lightbox-frame{
+  background-color: #fff;
+  width: 100%;
+  /* height: 100%; */
+  max-width: 600px;
+  /* max-height: 337px; */
+}
+.lightbox-close{
+  font-size: 36px;
+  color: #fff;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 40px;
+  height: 42px;
+}
 
+.crossimg{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  /* padding: 10px;   */
 
+}
 
 
 
@@ -1882,7 +1943,7 @@ img {
   justify-content: space-around;
   position: relative;
   animation-name: slide;
-  animation-duration: 20s;
+  animation-duration: 40s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-timeline: forwards;
@@ -2534,6 +2595,7 @@ body {
   .gallery-item{
     width: 100%;
     max-width: 330px;
+    
   }
 
   .btn-show-more{
@@ -2646,5 +2708,21 @@ body {
     justify-items: center;
     flex: 2;
   }
+  .form-input{
+    width: 100%;
+  }
+  .form-flex-down{
+    display: flex;
+    align-items: center;
+  }
+  .form-01 {
+    margin: 0px 25px;
+  }
+  .form-heading-div{
+    text-align: center;
+  }
 
+  .cus-slide-mobile img {
+    width: 100px;
+  }
 }

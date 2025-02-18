@@ -215,20 +215,36 @@ function moveSlide(direction) {
 
 
 
-let currentIndex = 0;
-const totalSlides = 12;
-const visibleSlides = 3;
+
+const galleryContainer = document.querySelector('.gallery-container');
+
 const gallery = document.querySelector('.gallery');
+const gallerySlides = Array.from(gallery.querySelectorAll('.a-div'));
+let currentIndex = 0;
+const galleryTotalSlides = gallerySlides.length;
+const visibleSlides = 3;
+let slideGap = 35;
+let gallerySlideWidth = gallerySlides[0].clientWidth;
+
+galleryContainer.style.width = `${(gallerySlideWidth*visibleSlides)+(slideGap*(visibleSlides-1))}px`;
+
+const galleryFirstClone = gallerySlides[0].cloneNode(true);
+const galleryLastClone = gallerySlides[galleryTotalSlides - 1].cloneNode(true);
+gallery.appendChild(galleryFirstClone);
+gallery.insertBefore(galleryLastClone, gallerySlides[0]);
+
+const updatedGallerySlides= Array.from(gallery.querySelectorAll('.a-div'));
 
 function moveGallery(direction) {
-    const maxIndex = totalSlides - visibleSlides;
+    const maxIndex = galleryTotalSlides-1;
     currentIndex += direction;
     if (currentIndex < 0) {
-        currentIndex = 0;
-    } else if (currentIndex > maxIndex) {
         currentIndex = maxIndex;
+    } else if (currentIndex > maxIndex) {
+        currentIndex = 0;
     }
-    gallery.style.transform = `translateX(-${(currentIndex * 100) / visibleSlides}%)`;
+    updatedGallerySlides.forEach(slide=>slide.style.transform = `translateX(-${(currentIndex * gallerySlideWidth) + slideGap*currentIndex}px)`)
+    // gallery.style.transform = `translateX(-${(currentIndex * gallerySlideWidth) + slideGap*currentIndex}px)`;
 }
 
 
@@ -485,6 +501,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     sliderPlay(document.querySelector('#testimonialSlider'),zoom=false)
 })
 
+
+
+
 const closePopupButton = document.getElementById('close-pop-up-btn')
 closePopupButton.addEventListener('click', () => {
     document.getElementById('divpopup').style.display = 'none';
@@ -495,3 +514,22 @@ ctaClickBtn.forEach(btn => {
         document.getElementById('firstname-2').focus();
     });
 });
+
+document.addEventListener("DOMContentLoaded",()=>{
+    const youtubeLightboxs = Array.from(document.querySelectorAll('.youtube-light-box'));
+    youtubeLightboxs.forEach(youtubeLightbox=>{
+        youtubeLightbox.addEventListener('click', () => {
+            let ylink = youtubeLightbox.getAttribute('data-link');
+            const lightboxPopup = document.querySelector('.lightbox-popup');
+            const lightboxFrame = lightboxPopup.querySelector('.lightbox-frame');
+            const lightboxClose = lightboxPopup.querySelector('.lightbox-close');
+            
+            lightboxPopup.style.display="flex";
+            lightboxFrame.innerHTML = `<iframe width="600" height="337" src="${ylink}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxPopup.style.display = 'none';
+            });
+        })
+    })
+})
