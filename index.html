@@ -29,13 +29,13 @@
                 <a href=""><img class="image-nav" src="./image/moolya-logo.webp"
                         alt=""></a>
                 <nav class="nav1">
-                    <a href="#services">Our Services</a>
+                    <a href="#flip-card">Our Services</a>
                     <a href="#why_us">Why us?</a>
                     <a href="#case_studies">Case studies</a>
                     <a href="#testimonials">Testimonials</a>
                     <div>
                         <!-- <a id="0" href="#scrollup">Talk to an Expert</a> -->
-                        <button class="btn2">Talk to an Expert</button>
+                        <button class="btn2 cta-click">Talk to an Expert</button>
                         <!-- this is a button  -->
                     </div>
                 </nav>
@@ -86,26 +86,82 @@
 
                 <div class="form-01"> <!--form-->
 
-                    <div>
-                        <div class="form-heading-div">
-                            <p class="form-heading">Build Faster, Test Smarter – Optimize Your QA Strategy Today</p>
+                    
+                    <form id="email-form-2" name="Email Form 2">
+                        <div>
+                            <div class="form-heading-div">
+                                <p class="form-heading">Build Faster, Test Smarter – Optimize Your QA Strategy Today</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="form-flex-down">
-                        <input type="text" class="form-input" placeholder="Name">
-                        <input type="text" class="form-input" placeholder="Work Email">
-                        <input type="text" class="form-input" placeholder="Company Name">
-                        <input type="tel" class="form-input" placeholder="Phone Number">
-                        <div class="center-alg">
-                            <button class="btn2">Submit</button>
+                        <div class="form-flex-down">
+                            <div>
+                                <input type="text" class="form-input" placeholder="Name" id="firstname-2" name="firstname">
+                                <p class="txt-error" id="firstname-error">Enter a name</p>
+                            </div>
+                            <div>
+                                <input type="text" class="form-input" placeholder="Work Email" id="email" name="email" >
+                                <p class="txt-error" id="error-text">Enter a business email</p>
+                            </div>
+                            <div>
+                                <input type="text" class="form-input" placeholder="Company Name" id="company-2" name="company">
+                                <p class="txt-error" id="company-error">Enter a company name</p>
+                            </div>
+                            <div>
+                                <input type="tel" class="form-input" placeholder="Phone Number" id="phone" name="phone">
+                                <p class="txt-error" id="errorPhoneText">Enter valid phone number</p>
+                            </div>
+                            <div class="center-alg">
+                                <button class="btn2" id="submit-btn">Submit</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+                    <div id="thankYou"></div>
                 </div>
+                <!-- <div id="divpopup" style="display: none;">
+                    <div id="chiliPiperContainer"></div>
+
+                    <script>
+                    window.addEventListener('load', function () {
+                        setTimeout(function () {
+                        var iframe = document.createElement('iframe');
+                        iframe.src = "https://moolya.chilipiper.com/me/sales-at-moolya/meeting-with-sales";
+                        iframe.width = "100%";
+                        iframe.height = "600px";
+                        iframe.style.background = "white";
+                        document.getElementById('chiliPiperContainer').appendChild(iframe);
+                        }, 5000); // Delays loading by 3 seconds
+                    });
+                    </script>
+                </div> -->
+
+                
             </div>
         </div>
     </section>
+    <div id="divpopup" class="scheduler_div">
+        <div class="div-block-694">
+            <div class="code-embed w-embed w-script">
+                <div id="chiliPiperContainer">
+                    <!-- <iframe src="https://moolya.chilipiper.com/me/sales-at-moolya/meeting-with-sales" width="100%" height="600px" style="background: white;"></iframe> -->
+                </div>
 
+                <script>
+                window.addEventListener('load', function () {
+                    setTimeout(function () {
+                    var iframe = document.createElement('iframe');
+                    iframe.src = "https://moolya.chilipiper.com/me/sales-at-moolya/meeting-with-sales";
+                    iframe.width = "100%";
+                    iframe.height = "600px";
+                    iframe.style.background = "white";
+                    document.getElementById('chiliPiperContainer').appendChild(iframe);
+                    }, 5000); // Delays loading by 3 seconds
+                });
+                </script>
+                </div>
+                <div class="div-block-695" id="close-pop-up-btn"><img src="https://cdn.prod.website-files.com/678f57317111dcd045df12e5/6799dc0dea702150cef709a4_images.webp" loading="lazy" alt="">
+                </div>
+            </div>
+    </div>
 
     <section>
       <div class="cus-slider-wrapper">
@@ -364,10 +420,12 @@
             </div>
             
             <div class="btncenter2" style="margin-top: 0;">
-                <button class="btn-show-more" id="show-more-accordion">Show More </button>
+                <button class="btn-show-more" id="show-more-accordion">Show More <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19" viewBox="0 0 30 19" fill="none">
+                    <path d="M26.9824 2.96514L15.0174 15L2.98252 3.03498" stroke="#785DFB" stroke-width="5" stroke-linecap="round"/>
+                    </svg>    </button>
             </div> 
             <div class="btncenter2">
-                <button class="btn2">Let's get started</button>
+                <button class="btn2 cta-click">Let's get started</button>
             </div> 
             
         </div>
@@ -378,7 +436,7 @@
 
 
     <section class="section2">
-        <div class="container4">
+        <div class="container4" id="flip-card">
             <div class="center-alg">
                 <h1 class="fnt-size2"><span class="color-purp">Testing Services</span> like never before</h1>
                 <p class="txt-color">Highlighting our Capabilities and Expertise</p>
@@ -613,7 +671,7 @@
             </div>
 
             <div class="btncenter">
-                <button class="btn2">Test with us!</button>
+                <button class="btn2 cta-click">Test with us!</button>
             </div>   
 
 
@@ -704,7 +762,7 @@
             </div>
 
             <div class="btncenter2">
-                <button class="btn2">Let's get started</button>
+                <button class="btn2 cta-click">Let's get started</button>
             </div>   
         
         </div>    
@@ -713,7 +771,7 @@
 
 
     <section class="section4">
-        <div class="container4">
+        <div class="container4" id="why-us">
             <div class="center-alg">
                 <h1 class="fnt-size2">Why <span class="color-purp">IT leaders</span>  around the world choose <span class="color-purp">Moolya</span> </h1>
                 <p class="txt-color">Get the benefits of Growth Driven Testing</p>
@@ -1120,22 +1178,173 @@
                                 </div>
                                 <div class="cus-tab-tabs-container">
                                     <div class="cus-tab-wrapper active">
-                                        Tab Number 1
+                                        <div class="imagegrid-mobile">
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/postman98765 1.webp" alt="">
+                                                <p>Postmen</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide2img2.webp" alt="">
+                                                <p>Swagger</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide2img3.webp" alt="">
+                                                <p>Karate</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide2img4.webp" alt="">
+                                                <p>Rest assured</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide2img5.webp" alt="">
+                                                <p>Katalon</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide2img6.webp" alt="">
+                                                <p>Jmeter</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="cus-tab-wrapper">
+                                        <div class="imagegrid-mobile">
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/java.webp" alt="">
+                                                <p>Java</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/python.webp" alt="">
+                                                <p>Python</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide1img.webp" alt="">
+                                                <p>Microsoft.net</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide1img2.webp" alt="">
+                                                <p>Selenium</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/cyslide.webp" alt="">
+                                                <p>Cypress</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/imgside3.webp" alt="">
+                                                <p>Appium</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/avo.webp" alt="">
+                                                <p>AVO</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/rpa.webp" alt="">
+                                                <p>RPA</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/Playwright.webp" alt="">
+                                                <p>Playwright</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="cus-tab-wrapper">
+                                        <div class="imagegrid-mobile-center">
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide2img6.webp" alt="">
+                                                <p>Jmeter</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide3img2.webp" alt="">
+                                                <p>Load Runner</p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="cus-tab-wrapper">
-                                        Tab Number 2
+                                        <div class="imagegrid-mobile-center">
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide3img1.webp" alt="">
+                                                <p>Burp Suite</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide3img2 (2).webp" alt="">
+                                                <p>Sonarqube</p>
+                                            </div>
+
+                                        </div>
                                     </div>
+                                    
                                     <div class="cus-tab-wrapper">
-                                        Tab Number 3
+                                        <div class="imagegrid-mobile">
+
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide4img1.webp" alt="">
+                                                <p>Appium</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide4img2.webp" alt="">
+                                                <p>Browserstack</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide4img3.webp" alt="">
+                                                <p>ADB</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide4img4.webp" alt="">
+                                                <p>Apptim</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide4img5.webp" alt="">
+                                                <p>Xcode</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide4img6.webp" alt="">
+                                                <p>Bitrise</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide4img7.webp" alt="">
+                                                <p>Charles</p>
+                                            </div>
+                                            
+                                        </div>
                                     </div>
+
+
+
                                     <div class="cus-tab-wrapper">
-                                        Tab Number 4
-                                    </div>
-                                    <div class="cus-tab-wrapper">
-                                        Tab Number 5
-                                    </div>
-                                    <div class="cus-tab-wrapper">
-                                        Tab Number 6
+                                        <div class="imagegrid-mobile">
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide6img1.webp" alt="">
+                                                <p>Lighthouse</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide6img2.webp" alt="">
+                                                <p>Perfecto</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide6img3.webp" alt="">
+                                                <p>Testsigma</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide6img4.webp" alt=" ">
+                                                <p>Axe</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide6img5.webp" alt="">
+                                                <p>Wave</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide6img6.webp" alt="">
+                                                <p>Siteimprove</p>
+                                            </div>
+                                            <div class="cont-img-txt-div">
+                                                <img class="mob-image" src="./image/slide6img7.webp" alt="">
+                                                <p>AccessBi</p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -1226,7 +1435,7 @@
             </div>
             
             <div class="btncenter2">
-                <button class="btn2">Let's get started</button>
+                <button class="btn2 cta-click">Let's get started</button>
             </div> 
 
     
@@ -1240,8 +1449,8 @@
     </div>
 
 
-    <section class="section6">
-        <div class="container6">
+    <section class="section6" id="case_studies">
+        <div class="container6" >
             <div class="center-alg1">
                 <h1 class="fnt-size2">Your victories, our <span class="color-purp">Celebrations</span></h1>
                 <p class="txt-color">Our customers’ landmarks are our goalposts. Wondering how we do it?</p>
@@ -1847,14 +2056,162 @@
 
             <div class="zoom_slider no-desktop" id="zoom_slider">
                 <div class="mask">
-                    <div class="zoom_slide active"></div>
-                    <div class="zoom_slide"></div>
-                    <div class="zoom_slide"></div>
+                    <div class="zoom_slide active">
+                        <div class="gallery-item">
+                            <img src="./image/section6 slider2img.webp" alt="Slide 2">
+                            <div class="imgcontainer21">
+                                <div class="bg-col-785dbf">
+                                    <p class="bg-col-p">OTT</p>
+                                </div>
+            
+                                <div>
+                                    <h3 class="headingslder">Hitting Sixers with Hotstar</h3>
+                                </div>
+                                <div>
+                                    <p class="subhead2">Over 12 million people tuned in to Hotstar to view the latest  India vs Pakistan match. Not only did this break...</p>
+                                </div>
+            
+                                <div>
+                                    <a href="" class="read-story">Read Full Story</a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" fill="none">
+                                        <path d="M19.0002 5L15.0001 1M19.0002 5H1H19.0002ZM19.0002 5L15.0001 9L19.0002 5Z" stroke="#785DFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zoom_slide">
+                        <div class="gallery-item">
+                            <img src="./image/section6 slider3img.webp" alt="Slide 3">
+                            <div class="imgcontainer21">
+                                <div class="bg-col-785dbf">
+                                    <p class="bg-col-p">BFSI</p>
+                                </div>
+            
+                                <div>
+                                    <h3 class="headingslder">From bugs to bucks and more</h3>
+                                </div>
+                                <div>
+                                    <p class="subhead2">Moolya supported PhonePe to rapidly iterate new features that increased user adoption and enabled seamless transactions...</p>
+                                </div>
+            
+                                <div>
+                                    <a href="" class="read-story">Read Full Story</a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" fill="none">
+                                        <path d="M19.0002 5L15.0001 1M19.0002 5H1H19.0002ZM19.0002 5L15.0001 9L19.0002 5Z" stroke="#785DFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zoom_slide">
+                        <div class="gallery-item">
+                            <img src="./image/section7img4.webp" alt="Slide 4">
+                            <div class="imgcontainer21">
+                                <div class="bg-col-785dbf2">
+                                    <p class="bg-col-p">E-commerce</p>
+                                </div>
+            
+                                <div>
+                                    <h3>Clearing the Runway for Fashionable Features</h3>
+                                </div>
+                                <div>
+                                    <p class="subhead2">Moolya helped Myntra to clear backlog automation scripts which freed the team to work on new...</p>
+                                </div>
+            
+                                <div>
+                                    <a href="" class="read-story">Read Full Story</a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" fill="none">
+                                        <path d="M19.0002 5L15.0001 1M19.0002 5H1H19.0002ZM19.0002 5L15.0001 9L19.0002 5Z" stroke="#785DFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="zoom_slide">
+                        <div class="gallery-item">
+                            <img src="./image/section7img5.webp" alt="Slide 5">
+                            <div class="imgcontainer21">
+                                <div class="bg-col-785dbf2">
+                                    <p class="bg-col-p">E-commerce</p>
+                                </div>
+        
+                                <div>
+                                    <h3 class="headingslder">Breaking barriers with Flipkart</h3>
+                                </div>
+                                <div>
+                                    <p class="subhead2">Every year millions of Indians move around for their work. Most times, we don’t know the language of that city. What works in our favour...</p>
+                                </div>
+        
+                                <div>
+                                    <a href="" class="read-story">Read Full Story</a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" fill="none">
+                                        <path d="M19.0002 5L15.0001 1M19.0002 5H1H19.0002ZM19.0002 5L15.0001 9L19.0002 5Z" stroke="#785DFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="zoom_slide">
+                        <div class="gallery-item">
+                            <img src="image/section7img6.webp" alt="Slide 6">
+                            <div class="imgcontainer21">
+                                <div class="bg-col-785dbf2">
+                                    <p class="bg-col-p">Quick commerce</p>
+                                </div>
+        
+                                <div>
+                                    <h3 class="headingslder">Learning with Foodpanda</h3>
+                                </div>
+                                <div>
+                                    <p class="subhead2">In this pandemic hit world, Foodpanda eased the process of food ordering and grocery shopping for people social distancing at home...</p>
+                                </div>
+        
+                                <div>
+                                    <a href="" class="read-story">Read Full Story</a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" fill="none">
+                                        <path d="M19.0002 5L15.0001 1M19.0002 5H1H19.0002ZM19.0002 5L15.0001 9L19.0002 5Z" stroke="#785DFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zoom_slide">
+                        <div class="gallery-item">
+                            <img src="./image/section6 slider1img.webp" alt="Slide 1">
+                            <div class="imgcontainer21">
+                                <div class="bg-col-785dbf">
+                                    <p class="bg-col-p">Ad-Tech</p>
+                                </div>
+        
+                                <div>
+                                    <h3 class="headingslder">Next-generation Customer Data Platform</h3>
+                                </div>
+                                <div>
+                                    <p class="subhead2">In this era of digitisation, data is the world’s most valuable resource. That is why companies like...</p>
+                                </div>
+        
+                                <div>
+                                    <a href="" class="read-story">Read Full Story</a>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="10" viewBox="0 0 20 10" fill="none">
+                                        <path d="M19.0002 5L15.0001 1M19.0002 5H1H19.0002ZM19.0002 5L15.0001 9L19.0002 5Z" stroke="#785DFB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="navigation_btns"></div>
             </div>
             <div class="btncenter2">
-                <button class="btn2">Let's get started</button>
+                <button class="btn2 cta-click">Let's get started</button>
             </div> 
 
     
@@ -1876,7 +2233,7 @@
                 <h1 class="fnt-size2">Where<span class="color-purp"> QA </span>meets <span class="color-purp">Expertise</span></h1>
                 <p class="txt-color">A comprehensive testing package for whatever your needs may be</p>
             </div>
-            <div class="maindivyoutuberediction">
+            <div class="maindivyoutuberediction no-mobile">
                 <div class="maindivyoutuberediction1">
                     <div class="thum-img22">
                         <a class="an-link" href=""><img class="imagesec777" src="./image/section777img1.webp" alt=""></a>
@@ -1917,6 +2274,58 @@
                     </div>
                 </div>
             </div>
+            <div class="zoom_slider no-desktop" id="testimonialSlider">
+                <div class="mask wide330">
+                    <div class="zoom_slide wide330 active">
+                        <div class="px16padding">
+                            <div class="thum-img22">
+                                <a class="an-link" href=""><img class="imagesec777" src="./image/section777img1.webp" alt=""></a>
+                            </div>
+        
+                            <div class="img-txt-cont-div">
+                                <div class="para-div-inside">
+                                    <p class="ptaghead">Sathish K S</p>
+                                    <p class="ptaghead2">CTO - Zeotap</p>
+                                </div>
+        
+        
+                                <div>
+                                    <img class="img732321" src="./image/section7777img212313.webp" alt="">
+                                </div>
+                                
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zoom_slide wide330">
+                        <div class="px16padding"> 
+                            <div class="thum-img22">
+                                <a class="an-link" href=""><img class="imagesec777"  src="./image/section7777img2.webp" alt=""></a>
+                            </div>
+        
+                            <div class="img-txt-cont-div">
+                                <div class="para-div-inside">
+                                    <p class="ptaghead">Maynak Dikshit</p>
+                                    <p class="ptaghead2">Director - Quality Engineering - Mindtickle</p>
+                                </div>
+        
+        
+                                <div>
+                                    <img class="img732321" src="./image/section7777773213.webp" alt="">
+                                </div>
+                                
+                            
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="navigation_btns"></div>
+            </div>
+            <div class="btncenter2">
+                <button class="btn2 cta-click">Let's get started</button>
+            </div> 
+
         </div>
     </section>
 
@@ -2052,14 +2461,137 @@
             </div>
             <div class="zoom_slider no-desktop" id="simpleSlider">
                 <div class="mask">
-                    <div class="zoom_slide active"></div>
-                    <div class="zoom_slide"></div>
-                    <div class="zoom_slide"></div>
+                    <!-- 1 -->
+                    <div class="zoom_slide active">
+                        <div class="imgcontainer65">
+                            <div class="itemcenter">
+                                <h2>Retail</h2>
+                            </div>
+                            <div class="gridmask">
+                                <img src="./image/1sephora.webp" class="wideimg200" alt="">
+                                <img src="./image/2blinkit.webp" class="wideimg200" alt="">
+                                <img src="./image/3justpay.webp" class="wideimg200" alt="">
+                                <img src="./image/4fynd.webp" class="wideimg200" alt="">
+                                <img src="./image/5homelane.webp" class="wideimg200" alt="">
+                                <img src="./image/6phonepay.webp" class="wideimg200" alt="">
+                                <img src="./image/7mooofarm.webp" class="wideimg200" alt="">
+                                <img src="./image/8tiekled.webp" class="wideimg200" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 2 -->
+                    <div class="zoom_slide">
+                        <div class="imgcontainer65">
+                            <div class="itemcenter">
+                                <h2>Retail</h2>
+                            </div>
+                            <div class="gridmask">
+                                <img src="./image/sectab2img1.webp" class="wideimg200" alt="">
+                                <img src="./image/sectab2img2.webp" class="wideimg200" alt="">
+                                <img src="./image/sectab2img3.webp" class="wideimg200" alt="">
+                                <img src="./image/sectab2img4.webp" class="wideimg200" alt="">
+                                <img src="./image/sectabimg5.webp" class="wideimg200" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- 3 -->
+                    <div class="zoom_slide">
+                        <div class="imgcontainer65">
+                            <div class="itemcenter">
+                                <h2>Retail</h2>
+                            </div>
+                            <div class="gridmask">
+                                <img src="./image/tab3img1.webp" class="wideimg200" alt="">
+                                <img src="./image/tab3img2.webp" class="wideimg200" alt="">
+                                <img src="./image/tab3img3.webp" class="wideimg200" alt="">
+                                <img src="./image/tab3img4.webp" class="wideimg200" alt="">
+                                <img src="./image/tab3img5.webp" class="wideimg200" alt="">
+                                <img src="./image/tab3img6.webp" class="wideimg200" alt="">
+                                <img src="./image/tab3img7.webp" class="wideimg200" alt="">
+                                <img src="./image/tab3img8.webp" class="wideimg200" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="zoom_slide">
+                        <div class="imgcontainer65">
+                            <div class="itemcenter">
+                                <h2>Retail</h2>
+                            </div>
+                            <div class="gridmask">
+                                <img src="./image/oot1.webp" class="wideimg200" alt="">
+                                <img src="./image/ott2.webp" class="wideimg200" alt="">
+                                <img src="./image/ott3.webp" class="wideimg200" alt="">
+                                <img src="./image/ott4.webp" class="wideimg200" alt="">
+                                <img src="./image/ott5.webp" class="wideimg200" alt="">
+                                <img src="./image/ott6.webp" class="wideimg200" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="zoom_slide">
+                        <div class="imgcontainer65">
+                            <div class="itemcenter">
+                                <h2>Retail</h2>
+                            </div>
+                            <div class="gridmask">
+                                <img src="./image/Manufacturing1.webp" class="wideimg200" alt="">
+                                <img src="./image/Manufacturing2.webp" class="wideimg200" alt="">
+                                <img src="./image/Manufacturing3.webp" class="wideimg200" alt="">
+                                <img src="./image/Manufacturing4.webp" class="wideimg200" alt="">
+                                <img src="./image/Manufacturing5.webp" class="wideimg200" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 6 -->
+                    <div class="zoom_slide">
+                        <div class="imgcontainer65">
+                            <div class="itemcenter">
+                                <h2>Retail</h2>
+                            </div>
+                            <div class="gridmask">
+                                <img src="./image/Telecommunications1.webp" class="wideimg200" alt="">
+                                <img src="./image/Telecommunications2.webp" class="wideimg200" alt="">
+                                <img src="./image/Telecommunications3.webp" class="wideimg200" alt="">
+                                <img src="./image/Telecommunications4.webp" class="wideimg200" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 7 -->
+                    <div class="zoom_slide">
+                        <div class="imgcontainer65">
+                            <div class="itemcenter">
+                                <h2>Retail</h2>
+                            </div>
+                            <div class="gridmask">
+                                <img src="./image/Finance1.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance2.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance3.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance4.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance5.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance6.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance7.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance8.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance9.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance10.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance11.webp" class="wideimg200" alt="">
+                                <img src="./image/Finance12.webp" class="wideimg200" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
                 <div class="navigation_btns"></div>
             </div>
             <div class="btncenter2">
-                <button class="btn2">Let's get started</button>
+                <button class="btn2 cta-click">Let's get started</button>
             </div> 
 
         </div>
@@ -2068,7 +2600,7 @@
     </section>
 
 
-    <section class="section9">
+    <section class="section9" id="testimonials">
         <div class="container9">
             <div class="mainSliderWrapper">
                 <div class="slider-container23">
@@ -2171,7 +2703,7 @@
                     <h2 class="paraheading">We prevent Bugs and <span> Tech Debt for our Customers</span></h2>
                     <p class="subhead">Want to check if we match?</p>
                     <div class="btncenter1">
-                        <button class="btn3">Contact us</button>
+                        <button class="btn3 cta-click">Contact us</button>
                     </div>  
                 </div>
                 <div class="rightcont">
@@ -2187,6 +2719,189 @@
 
 
 <script src="script.js"></script>
+
+<!-- jQuery Library (must be loaded first) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    document.getElementById("email-form-2").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+        
+        setTimeout(function() {
+            // document.getElementById("divpopup").style.display = "flex"; // Show the div after 4 seconds
+        }, 1000);
+    });
+</script>
+
+
+<script>
+$(document).ready(function() {
+    var phone = document.getElementById('phone');
+    var emailInput = $('#email');
+    var submitBtn = $('#submit-btn');
+    var errorPhoneText = document.getElementById('errorPhoneText');
+    var errorText = document.getElementById('error-text');
+    
+    var companyName= document.getElementById("company-2")
+    var firstName = document.getElementById("firstname-2")
+    var companyError= document.getElementById("company-error")
+    var firstnameError= document.getElementById("firstname-error")
+    
+    
+    function validateForm() {
+        var phoneValue = phone.value;
+        var emailValue = emailInput.val();
+        var emailRegex = /^[\w-.]+@(?!gmail\.com$|gmail\.co$|yahoo\.com$|hotmail\.com$|outlook\.com$|live\.com$)[\w-]+\.[a-z]{2,4}$/i;
+				var nameValue = firstName.value;
+        var companyValue = companyName.value;
+
+
+        var isPhoneValid = phoneValue.length === 10;
+        var isEmailValid = emailRegex.test(emailValue);
+        var isNameValid = nameValue.trim().length != 0;
+        var isCompanyValid = companyValue.trim().length != 0;
+
+        // Show/hide error messages based on validation
+        errorPhoneText.style.display = isPhoneValid ? 'none' : 'block';
+        errorText.style.display = isEmailValid ? 'none' : 'block';
+        firstnameError.style.display = isNameValid ? 'none' : 'block';
+        companyError.style.display = isCompanyValid ? 'none' : 'block';
+
+        // Enable/disable submit button
+        if (isPhoneValid && isEmailValid && isNameValid && isCompanyValid) {
+            submitBtn.prop('disabled', false).removeClass('disabled');
+            return true;
+        } else {
+            submitBtn.prop('disabled', true).addClass('disabled');
+            return false;
+        }
+    }
+
+    // Add input event listeners for real-time validation
+    phone.addEventListener('input', function() {
+        if (phone.value.length > 10) {
+            phone.value = phone.value.slice(0, 10);
+        }
+        validateForm();
+    });
+    firstName.addEventListener('input', function() {
+        validateForm();
+    });
+    companyName.addEventListener('input', function() {
+        validateForm();
+    });
+
+    emailInput.on('input', validateForm);
+
+    // Initial state: hide error messages
+    errorPhoneText.style.display = 'none';
+    errorText.style.display = 'none';
+
+    // Initial validation on page load
+    //validateForm();
+     $('#submit-btn').click(function() {
+     console.log(validateForm())
+     	return validateForm();
+     })
+    
+});
+</script>
+
+<script>
+  function sendToHubSpot(data) {
+    return fetch("https://api.hsforms.com/submissions/v3/integration/submit/44821820/ff0ad92b-9d75-4ab0-948d-86af7253e369", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fields: data.fields, context: data.context })
+    })
+    .then(response => response.ok)
+    .catch(error => console.error("Error sending data to HubSpot:", error));
+  }
+  
+  function getUTMParams() { 
+    const urlParams = new URLSearchParams(window.location.search); 
+    let utmData = {}; 
+    for (let [key, value] of urlParams.entries()) { 
+      if (key.startsWith("utm_")) { 
+      utmData[key] = value; 
+      } 
+    } 
+    return utmData; 
+  }
+  
+  const utmParams = getUTMParams();
+
+  document.querySelector("#email-form-2").addEventListener("submit", function (e) {
+    e.preventDefault();
+    
+    Object.entries(utmParams).forEach(([key, value]) => { 
+      let utmField = document.querySelector(`#email-form-2 input[name='${key}']`); 
+        if (!utmField) { 
+          utmField = document.createElement("input"); 
+          utmField.type = "hidden"; 
+          utmField.name = key; 
+          document.querySelector('#email-form-2').appendChild(utmField); 
+        }
+      utmField.value = value; 
+    });
+    
+    const formData = new FormData(document.querySelector("#email-form-2"));
+    const fields = [];
+    formData.forEach((value, key) => {
+      fields.push({ objectTypeId: "0-1", name: key, value: value });
+    });
+
+    const context = {
+      hutk: document.cookie.split('; ').find(row => row.startsWith('hubspotutk='))?.split('=')[1] || "",
+      pageUri: window.location.href,
+      pageName: document.title,
+    };
+
+    sendToHubSpot({ fields, context }).then(success => {
+      const thankYouMessage = document.querySelector("#thankYou");
+      if (success) {
+        thankYouMessage.innerHTML = "Thank you! Your details have been submitted.";
+        thankYouMessage.style.color = "#785dfb";
+        document.querySelector("#email-form-2").style.display = "none";
+        document.querySelector("#divpopup").style.display = "flex";
+        
+      } else {
+        thankYouMessage.innerHTML = "An error occurred. Please try again.";
+        thankYouMessage.style.color = "red";
+      }
+      thankYouMessage.style.display = "block";
+    });
+  });
+</script>
+
+<style>
+  @media only screen and (max-width: 600px) {
+    #thankYou {
+      font-size: 24px;
+    }
+  }
+</style>
+
+
+
+<script>
+$(document).ready(function() {
+    $('#submit-btn').click(function() {
+        var email = $('#email').val();
+        var reg = /^[\w-.]+@(?!gmail\.com$|yahoo\.com$|hotmail\.com$|yahoo\.co\.in$|aol\.com$|abc\.com$|xyz\.com$|pqr\.com$|rediffmail\.com$|live\.com$|outlook\.com$|me\.com$|msn\.com$|ymail\.com$)[\w-]+(?:\.[\w-]+)*\.[a-z]{2,}$/i;
+
+        var errorText = document.getElementById('error-text');
+
+        if (reg.test(email)) {
+            errorText.style.display = 'none';
+            return true;  // Changed to true to indicate success
+        } else {
+            errorText.style.display = 'block';
+            return false;
+        }
+    });
+});
+</script>
 </body>
 
 </html>

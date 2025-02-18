@@ -435,8 +435,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const sliderPlay=(Customslider,zoom)=>{
     const customMask = Customslider.querySelector('.mask')
     const navigationDOts = Customslider.querySelector('.navigation_btns');
-    const slides = Array.from(Customslider.querySelectorAll('.zoom_slide'));
-    // console.log(zoom)
+    const slides = Array.from(customMask.querySelectorAll('.zoom_slide'));
+    
 
     const firstSlide = slides[0].cloneNode(true);
     firstSlide.classList.remove("active")
@@ -445,7 +445,7 @@ const sliderPlay=(Customslider,zoom)=>{
     // customMask.insertBefore(LastSlide, slides[0]);
 
     const updatedSlides= Array.from(Customslider.querySelectorAll('.zoom_slide'))
-
+    console.log(updatedSlides.length)
 
     const goToCusSlide =(index)=>{
         const dots = Array.from(navigationDOts.querySelectorAll(".dot"))
@@ -482,4 +482,16 @@ const sliderPlay=(Customslider,zoom)=>{
 document.addEventListener("DOMContentLoaded",()=>{
     sliderPlay(document.querySelector('#zoom_slider'),zoom=true)
     sliderPlay(document.querySelector('#simpleSlider'),zoom=false)
+    sliderPlay(document.querySelector('#testimonialSlider'),zoom=false)
 })
+
+const closePopupButton = document.getElementById('close-pop-up-btn')
+closePopupButton.addEventListener('click', () => {
+    document.getElementById('divpopup').style.display = 'none';
+});
+const ctaClickBtn = Array.from(document.querySelectorAll('.cta-click'))
+ctaClickBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.getElementById('firstname-2').focus();
+    });
+});
