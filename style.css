@@ -660,7 +660,14 @@ body {
 }
 
 
+.dots-container12{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  padding-bottom: 10px;
+  width: 100%;
 
+}
 .bg-col-785dbf{
   width: 104px;
   background-color: #785dbf;
@@ -2045,6 +2052,8 @@ img {
   height: 20px;
 }
 
+
+
 .corner-image2 {
   position: absolute;
   bottom: 5px;
@@ -2587,6 +2596,9 @@ body {
   .gallery-container{
     display: none;
   }
+
+
+
   .zoom_slider{
     width: 100%;
     height: 480px;
@@ -2686,7 +2698,7 @@ body {
     border: none;
   }
 
-
+ 
   .img50pximg{
     padding: 5px;  
   }
