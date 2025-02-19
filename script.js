@@ -302,6 +302,7 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     let endX = 0;
     let gap = 36;
     const slideWidth = slides[0].clientWidth
+    let autoSlideInterval;
     
 
     const firstClone = slides[0].cloneNode(true);
@@ -336,7 +337,7 @@ document.getElementById("nextBtn").addEventListener("click", () => {
     };
 
     const autoSlide = () => {
-        setInterval(() => {
+       autoSlideInterval =  setInterval(() => {
             currentSlide = (currentSlide + 1) % totalSlides;
             goToSlide(currentSlide);
         }, autoSlideDuration);
@@ -352,26 +353,61 @@ document.getElementById("nextBtn").addEventListener("click", () => {
         goToSlide(currentSlide);
     };
 
-    // Add event listeners for drag/swipe gestures
-    mask.addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
-    mask.addEventListener("touchend", (e) => {
-        endX = e.changedTouches[0].clientX;
-        if (startX > endX + 50) {
-            slideToRight();
-        } else if (startX < endX - 50) {
-            slideToLeft();
-        }
+    // // Add event listeners for drag/swipe gestures
+    // mask.addEventListener("touchstart", (e) => startX = e.touches[0].clientX);
+    // mask.addEventListener("touchend", (e) => {
+    //     endX = e.changedTouches[0].clientX;
+    //     if (startX > endX + 50) {
+    //         slideToRight();
+    //     } else if (startX < endX - 50) {
+    //         slideToLeft();
+    //     }
+    // });
+
+    // mask.addEventListener("mousedown", (e) => startX = e.clientX);
+    // mask.addEventListener("mouseup", (e) => {
+    //     endX = e.clientX;
+    //     if (startX > endX + 50) {
+    //         slideToRight();
+    //     } else if (startX < endX - 50) {
+    //         slideToLeft();
+    //     }
+    // });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    // sliderWrapper.addEventListener("click", function(){
+    //     clearInterval(autoSlideInterval)
+    // })
+    sliderWrapper.addEventListener("touchstart", function (event) {
+        
+        touchStartX = event.touches[0].clientX;
     });
 
-    mask.addEventListener("mousedown", (e) => startX = e.clientX);
-    mask.addEventListener("mouseup", (e) => {
-        endX = e.clientX;
-        if (startX > endX + 50) {
-            slideToRight();
-        } else if (startX < endX - 50) {
-            slideToLeft();
-        }
+    sliderWrapper.addEventListener("touchend", function (event) {
+        touchEndX = event.changedTouches[0].clientX;
+        handleSwipe();
     });
+
+    function handleSwipe() {
+        clearInterval(autoSlideInterval)
+        const swipeThreshold = 50; // Minimum distance to detect swipe
+
+        if (touchEndX < touchStartX - swipeThreshold) {
+            console.log("Swiped Left",currentSlide);
+            // Call your function for swipeLeft
+            if(currentSlide<slides.length-1) {
+                goToSlide(currentSlide+1);
+            }
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            console.log("Swiped Right",currentSlide);
+            // Call your function for swipeRight
+            if(currentSlide>0) {
+                goToSlide(currentSlide - 1);
+            }
+            
+        }
+    }
 
     autoSlide();
 })();
@@ -452,18 +488,19 @@ const sliderPlay=(Customslider,zoom)=>{
     const customMask = Customslider.querySelector('.mask')
     const navigationDOts = Customslider.querySelector('.navigation_btns');
     const slides = Array.from(customMask.querySelectorAll('.zoom_slide'));
-    
+    let currentSlideIndex = 0
 
-    const firstSlide = slides[0].cloneNode(true);
-    firstSlide.classList.remove("active")
+    // const firstSlide = slides[0].cloneNode(true);
+    // firstSlide.classList.remove("active")
     // const LastSlide = slides[slides.length-1].cloneNode(true)
-    customMask.appendChild(firstSlide);
+    // customMask.appendChild(firstSlide);
     // customMask.insertBefore(LastSlide, slides[0]);
 
     const updatedSlides= Array.from(Customslider.querySelectorAll('.zoom_slide'))
     console.log(updatedSlides.length)
 
     const goToCusSlide =(index)=>{
+        currentSlideIndex = index;
         const dots = Array.from(navigationDOts.querySelectorAll(".dot"))
         dots.forEach(dot=>dot.classList.remove("active"))
         dots[index].classList.add("active")
@@ -492,7 +529,39 @@ const sliderPlay=(Customslider,zoom)=>{
         dot.addEventListener("click", () => goToCusSlide(index));
         navigationDOts.appendChild(dot);
     })
-    goToCusSlide(0)
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    Customslider.addEventListener("touchstart", function (event) {
+        touchStartX = event.touches[0].clientX;
+    });
+
+    Customslider.addEventListener("touchend", function (event) {
+        touchEndX = event.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50; // Minimum distance to detect swipe
+
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // console.log("Swiped Left",currentSlideIndex);
+            // Call your function for swipeLeft
+            if(currentSlideIndex<slides.length-1) {
+                goToCusSlide(currentSlideIndex+1);
+            }
+        } else if (touchEndX > touchStartX + swipeThreshold) {
+            // console.log("Swiped Right",currentIndex);
+            // Call your function for swipeRight
+            if(currentSlideIndex>0) {
+                goToCusSlide(currentSlideIndex - 1);
+            }
+            
+        }
+    }
+    
+    goToCusSlide(currentSlideIndex)
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
