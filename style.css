@@ -2465,7 +2465,7 @@ img {
   display: grid;
   width: auto !important;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 100px);
+  grid-template-rows: repeat(8, 100px);
 }
 
 .wide-height2{
